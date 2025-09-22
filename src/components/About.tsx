@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Target, Users, Heart, Globe, Award, Handshake } from 'lucide-react';
+import { Target, Users, Heart, Globe, Award, TreePine } from 'lucide-react';
 
 const About: React.FC = () => {
   const [ref, inView] = useInView({
@@ -36,7 +36,7 @@ const About: React.FC = () => {
       description: 'Melhoramos a alfabetização e educação básica em nossa região.'
     },
     {
-      icon: Handshake,
+      icon: TreePine,
       title: 'Meio Ambiente',
       description: 'Protegemos o meio ambiente através de ações de preservação e conscientização.'
     }
