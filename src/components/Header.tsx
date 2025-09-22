@@ -5,10 +5,13 @@ import { Menu, X, Users, Calendar, Heart, Globe } from 'lucide-react';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOnHeroSection, setIsOnHeroSection] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      // Check if we're on the hero section (first 100vh)
+      setIsOnHeroSection(window.scrollY < window.innerHeight);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -23,37 +26,32 @@ const Header: React.FC = () => {
     { name: 'Contato', href: '#contact', icon: Users }
   ];
 
+  // Determine colors and logo based on section
+  const isHeroSection = isOnHeroSection && !isScrolled;
+  const logoSource = isHeroSection ? "/rotarylogobranca.png" : "/rotarylogoazul.png";
+  const textColor = isHeroSection ? "text-white" : "text-rotary-dark";
+  const hoverColor = isHeroSection ? "hover:text-white/80" : "hover:text-rotary-blue";
+  const bgClass = isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent';
+
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${bgClass}`}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-3"
+            className="flex items-center"
           >
             <div className="w-12 h-12 flex items-center justify-center">
               <img 
-                src="/rotarylogoazul.png" 
+                src={logoSource} 
                 alt="Rotary Club Logo" 
                 className="w-full h-full object-contain"
               />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-rotary-dark">
-                Rotary Club
-              </h1>
-              <p className="text-sm text-gray-600">
-                Curitiba-Sítio Cercado
-              </p>
             </div>
           </motion.div>
 
@@ -67,7 +65,7 @@ const Header: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
-                className="flex items-center space-x-2 text-rotary-dark hover:text-rotary-blue transition-colors duration-300 font-medium"
+                className={`flex items-center space-x-2 ${textColor} ${hoverColor} transition-colors duration-300 font-medium`}
               >
                 <item.icon size={16} />
                 <span>{item.name}</span>
@@ -85,7 +83,9 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+            className={`lg:hidden p-2 rounded-lg transition-colors duration-300 ${
+              isHeroSection ? 'hover:bg-white/10 text-white' : 'hover:bg-gray-100 text-rotary-dark'
+            }`}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

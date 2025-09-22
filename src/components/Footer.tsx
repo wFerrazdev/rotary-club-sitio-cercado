@@ -55,13 +55,13 @@ const Footer: React.FC = () => {
             viewport={{ once: true }}
             className="lg:col-span-1"
           >
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 rotary-gradient rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">R</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">Rotary Club</h3>
-                <p className="text-gray-400 text-sm">Curitiba-Sítio Cercado</p>
+            <div className="flex items-center mb-6">
+              <div className="w-16 h-16 flex items-center justify-center">
+                <img 
+                  src="/rotarylogobranca.png" 
+                  alt="Rotary Club Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
