@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
               className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight"
             >
               <span className="block">Servindo a</span>
-              <span className="block gradient-text bg-gradient-to-r from-white to-yellow-200">
+              <span className="block gradient-text">
                 Comunidade
               </span>
             </motion.h1>
