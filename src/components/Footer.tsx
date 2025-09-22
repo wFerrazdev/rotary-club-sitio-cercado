@@ -58,9 +58,9 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-16 h-16 flex items-center justify-center">
                 <img 
-                  src="/rotarylogobranca.png" 
+                  src="/rotarylogoazul.png" 
                   alt="Rotary Club Logo" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain brightness-0 invert"
                 />
               </div>
             </div>
