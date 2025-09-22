@@ -11,12 +11,12 @@ const Header: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Detecta se está na seção Hero (azul) - só muda quando sair completamente
-      const heroSection = document.getElementById('hero');
-      if (heroSection) {
-        const heroRect = heroSection.getBoundingClientRect();
-        // Só sai da seção hero quando ela sair completamente da tela (bottom negativo)
-        setIsInHeroSection(heroRect.bottom > 0);
+      // Detecta se está na seção About - header muda só quando chegar na seção About
+      const aboutSection = document.getElementById('about');
+      if (aboutSection) {
+        const aboutRect = aboutSection.getBoundingClientRect();
+        // Header muda para branco quando a seção About chegar no topo da tela
+        setIsInHeroSection(aboutRect.top > 0);
       }
     };
 
