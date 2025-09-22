@@ -44,13 +44,13 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex items-center"
           >
-            <div className="w-80 h-80 flex items-center justify-center">
+            <div className="w-68 h-68 flex items-center justify-center">
               <img 
                 src="/rotarylogoazul.png" 
                 alt="Rotary Club Logo" 
