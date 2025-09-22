@@ -40,41 +40,41 @@ const HeroAdvanced: React.FC = () => {
         <div 
           className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"
           style={{
-            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`
+            transform: `translate(${mousePosition.x * 0.005}px, ${mousePosition.y * 0.005}px)`
           }}
         ></div>
         <div 
           className="absolute bottom-20 right-10 w-96 h-96 bg-rotary-gold/20 rounded-full blur-3xl animate-float"
           style={{
             animationDelay: '2s',
-            transform: `translate(${mousePosition.x * -0.03}px, ${mousePosition.y * -0.03}px)`
+            transform: `translate(${mousePosition.x * -0.008}px, ${mousePosition.y * -0.008}px)`
           }}
         ></div>
         <div 
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full blur-2xl animate-float"
           style={{
             animationDelay: '4s',
-            transform: `translate(${mousePosition.x * 0.01}px, ${mousePosition.y * 0.01}px)`
+            transform: `translate(${mousePosition.x * 0.003}px, ${mousePosition.y * 0.003}px)`
           }}
         ></div>
         
         {/* Floating Particles */}
-        {[...Array(20)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-white/20 rounded-full"
+            className="absolute w-1 h-1 bg-white/15 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
             }}
             animate={{
-              y: [0, -20, 0],
-              opacity: [0.2, 0.8, 0.2],
+              y: [0, -10, 0],
+              opacity: [0.1, 0.4, 0.1],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 4 + Math.random() * 3,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: Math.random() * 3,
             }}
           />
         ))}
@@ -220,12 +220,7 @@ const HeroAdvanced: React.FC = () => {
           className="flex flex-col items-center text-white/70"
         >
           <span className="text-sm mb-2">Descubra mais</span>
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-          >
-            <ArrowDown size={24} />
-          </motion.div>
+          <ArrowDown size={24} />
         </motion.div>
       </motion.div>
     </section>
