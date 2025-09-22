@@ -50,7 +50,7 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center"
           >
-            <div className="w-16 h-16 flex items-center justify-center">
+            <div className="w-24 h-24 flex items-center justify-center">
               <img 
                 src="/rotarylogoazul.png" 
                 alt="Rotary Club Logo" 
