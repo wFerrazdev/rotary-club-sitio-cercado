@@ -11,7 +11,7 @@ function App() {
       <main style={{ padding: '40px' }}>
         <section>
           <h2>Bem-vindos ao nosso site!</h2>
-          <p>Em breve teremos nosso site completo com todas as informações sobre nossos projetos e atividades.</p>
+          <p>Em breve teremos nosso site completo com todas as informações sobre nossos projetos e atividades. Site atualizado em dezembro de 2024.</p>
         </section>
         
         <section style={{ marginTop: '40px' }}>
