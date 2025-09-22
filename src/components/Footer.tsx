@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
             className="lg:col-span-1"
           >
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-192 h-192 flex items-center justify-center">
+              <div className="w-384 h-384 flex items-center justify-center">
                 <img 
                   src="/rotarylogoazul.png" 
                   alt="Rotary Club Logo" 
