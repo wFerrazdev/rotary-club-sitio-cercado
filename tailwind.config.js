@@ -13,8 +13,8 @@ module.exports = {
           light: '#f8fafc',
           dark: '#1e293b',
           gradient: {
-            dark: 'rgba(2,0,67,1)',
-            purple: 'rgba(79,8,225,1)'
+            dark: '#000428',
+            blue: '#004e92'
           }
         }
       },

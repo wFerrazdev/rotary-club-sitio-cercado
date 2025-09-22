@@ -9,10 +9,10 @@ const AnimatedBackground: React.FC = () => {
       {/* Subtle Geometric Shapes */}
       <div className="absolute top-0 left-0 w-full h-full">
         {/* Large Circle */}
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-gradient-to-r from-blue-600/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
         
         {/* Medium Circle */}
-        <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-gradient-to-l from-blue-500/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-gradient-to-l from-blue-800/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
         
         {/* Small Circle */}
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-white/5 to-transparent rounded-full blur-2xl animate-pulse" style={{ animationDelay: '4s' }}></div>
