@@ -38,7 +38,7 @@ const Header: React.FC = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
+        !isInHeroSection 
           ? 'bg-white/95 backdrop-blur-md shadow-lg' 
           : 'bg-transparent'
       }`}
@@ -56,16 +56,16 @@ const Header: React.FC = () => {
                   src="/rotarylogobranca.png" 
                   alt="Rotary Club Logo" 
                   className="w-full h-full object-contain"
+                  onError={(e) => {
+                    console.log('Logo branca falhou, tentando logo azul');
+                    e.currentTarget.src = "/rotarylogoazul.png";
+                  }}
                 />
               ) : (
                 <img 
                   src="/rotarylogoazul.png" 
                   alt="Rotary Club Logo" 
                   className="w-full h-full object-contain"
-                  onError={(e) => {
-                    console.log('Logo azul falhou, tentando logo branca');
-                    e.currentTarget.src = "/rotarylogobranca.png";
-                  }}
                 />
               )}
             </div>
