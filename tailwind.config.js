@@ -11,7 +11,11 @@ module.exports = {
           blue: '#1e40af',
           gold: '#f59e0b',
           light: '#f8fafc',
-          dark: '#1e293b'
+          dark: '#1e293b',
+          gradient: {
+            dark: 'rgba(2,0,67,1)',
+            purple: 'rgba(79,8,225,1)'
+          }
         }
       },
       fontFamily: {

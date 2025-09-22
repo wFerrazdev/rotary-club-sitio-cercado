@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-rotary-blue via-blue-700 to-rotary-gold">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden rotary-gradient">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"></div>
