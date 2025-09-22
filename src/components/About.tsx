@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Target, Users, Heart, Globe, Award, TreePine } from 'lucide-react';
+import SectionDecorations from './SectionDecorations';
 
 const About: React.FC = () => {
   const [ref, inView] = useInView({
@@ -52,8 +53,9 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="section-padding bg-gray-50">
-      <div className="container-custom">
+    <section id="about" className="section-padding bg-gray-50 relative">
+      <SectionDecorations section="about" />
+      <div className="container-custom relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}

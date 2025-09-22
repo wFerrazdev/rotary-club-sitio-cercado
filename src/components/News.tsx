@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Calendar, User, ArrowRight, Filter, Search } from 'lucide-react';
+import SectionDecorations from './SectionDecorations';
 
 interface NewsItem {
   id: number;
@@ -84,8 +85,9 @@ const News: React.FC = () => {
   const regularNews = filteredNews.filter(news => !news.featured);
 
   return (
-    <section id="news" className="section-padding bg-white">
-      <div className="container-custom">
+    <section id="news" className="section-padding bg-white relative">
+      <SectionDecorations section="news" />
+      <div className="container-custom relative z-10">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
