@@ -51,11 +51,23 @@ const Header: React.FC = () => {
             className="flex items-center"
           >
             <div className="w-16 h-16 flex items-center justify-center">
-              <img 
-                src={isInHeroSection ? "/rotarylogobranca.png" : "/rotarylogoazul.png"} 
-                alt="Rotary Club Logo" 
-                className="w-full h-full object-contain"
-              />
+              {isInHeroSection ? (
+                <img 
+                  src="/rotarylogobranca.png" 
+                  alt="Rotary Club Logo" 
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                <img 
+                  src="/rotarylogoazul.png" 
+                  alt="Rotary Club Logo" 
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    console.log('Logo azul falhou, tentando logo branca');
+                    e.currentTarget.src = "/rotarylogobranca.png";
+                  }}
+                />
+              )}
             </div>
           </motion.div>
 
