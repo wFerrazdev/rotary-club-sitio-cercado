@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden rotary-gradient">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden rotary-gradient">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl animate-float"></div>
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
               className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight"
             >
               <span className="block">Servindo a</span>
-              <span className="block text-white">
+              <span className="block gradient-text">
                 Comunidade
               </span>
             </motion.h1>

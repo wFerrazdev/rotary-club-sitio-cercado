@@ -5,16 +5,22 @@ import { Menu, X, Users, Calendar, Heart, Globe } from 'lucide-react';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isOnHeroSection, setIsOnHeroSection] = useState(true);
+  const [isInHeroSection, setIsInHeroSection] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      // Check if we're on the hero section (first 100vh)
-      setIsOnHeroSection(window.scrollY < window.innerHeight);
+      
+      // Detecta se está na seção Hero (azul)
+      const heroSection = document.getElementById('hero');
+      if (heroSection) {
+        const heroRect = heroSection.getBoundingClientRect();
+        setIsInHeroSection(heroRect.bottom > 100);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -26,18 +32,15 @@ const Header: React.FC = () => {
     { name: 'Contato', href: '#contact', icon: Users }
   ];
 
-  // Determine colors and logo based on section
-  const isHeroSection = isOnHeroSection && !isScrolled;
-  const logoSource = isHeroSection ? "/rotarylogobranca.png" : "/rotarylogoazul.png";
-  const textColor = isHeroSection ? "text-white" : "text-rotary-dark";
-  const hoverColor = isHeroSection ? "hover:text-white/80" : "hover:text-rotary-blue";
-  const bgClass = isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent';
-
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${bgClass}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+          : 'bg-transparent'
+      }`}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
@@ -46,9 +49,9 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center"
           >
-            <div className="w-12 h-12 flex items-center justify-center">
+            <div className="w-16 h-16 flex items-center justify-center">
               <img 
-                src={logoSource} 
+                src={isInHeroSection ? "/rotarylogobranca.png" : "/rotarylogoazul.png"} 
                 alt="Rotary Club Logo" 
                 className="w-full h-full object-contain"
               />
@@ -65,7 +68,11 @@ const Header: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
-                className={`flex items-center space-x-2 ${textColor} ${hoverColor} transition-colors duration-300 font-medium`}
+                className={`flex items-center space-x-2 transition-colors duration-300 font-medium ${
+                  isInHeroSection 
+                    ? 'text-white hover:text-white/80' 
+                    : 'text-rotary-dark hover:text-rotary-blue'
+                }`}
               >
                 <item.icon size={16} />
                 <span>{item.name}</span>
@@ -74,7 +81,11 @@ const Header: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="btn-primary"
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                isInHeroSection
+                  ? 'bg-white text-rotary-blue hover:bg-white/90 shadow-lg'
+                  : 'btn-primary'
+              }`}
             >
               Junte-se a Nós
             </motion.button>
@@ -84,7 +95,9 @@ const Header: React.FC = () => {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={`lg:hidden p-2 rounded-lg transition-colors duration-300 ${
-              isHeroSection ? 'hover:bg-white/10 text-white' : 'hover:bg-gray-100 text-rotary-dark'
+              isInHeroSection
+                ? 'text-white hover:bg-white/20'
+                : 'text-rotary-dark hover:bg-gray-100'
             }`}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
