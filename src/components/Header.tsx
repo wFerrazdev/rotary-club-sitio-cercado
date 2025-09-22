@@ -6,16 +6,18 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isInHeroSection, setIsInHeroSection] = useState(true);
+  const [logoError, setLogoError] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Detecta se está na seção Hero (azul)
+      // Detecta se está na seção Hero (azul) - mais preciso
       const heroSection = document.getElementById('hero');
       if (heroSection) {
         const heroRect = heroSection.getBoundingClientRect();
-        setIsInHeroSection(heroRect.bottom > 100);
+        // Considera que saiu da seção hero quando o topo da seção passa do topo da tela
+        setIsInHeroSection(heroRect.bottom > 0);
       }
     };
 
@@ -51,9 +53,11 @@ const Header: React.FC = () => {
           >
             <div className="w-16 h-16 flex items-center justify-center">
               <img 
-                src={isInHeroSection ? "/rotarylogobranca.png" : "/rotarylogoazul.png"} 
+                src={isInHeroSection && !logoError ? "/rotarylogobranca.png" : "/rotarylogoazul.png"} 
                 alt="Rotary Club Logo" 
                 className="w-full h-full object-contain"
+                onError={() => setLogoError(true)}
+                onLoad={() => setLogoError(false)}
               />
             </div>
           </motion.div>
