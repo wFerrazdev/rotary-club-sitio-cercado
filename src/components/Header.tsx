@@ -11,12 +11,12 @@ const Header: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Detecta se está na seção About - header muda só quando chegar na seção About
+      // Detecta se está na seção About - header muda quando a borda de baixo do header chegar na seção About
       const aboutSection = document.getElementById('about');
       if (aboutSection) {
         const aboutRect = aboutSection.getBoundingClientRect();
-        // Header muda para branco quando a seção About chegar no topo da tela
-        setIsInHeroSection(aboutRect.top > 0);
+        // Header muda para branco quando a borda de baixo do header (80px) chegar na seção About
+        setIsInHeroSection(aboutRect.top > 80);
       }
     };
 
@@ -40,7 +40,7 @@ const Header: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         !isInHeroSection 
           ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent'
+          : 'bg-transparent/20 backdrop-blur-sm'
       }`}
     >
       <div className="container-custom">
