@@ -15,8 +15,8 @@ const Header: React.FC = () => {
       const heroSection = document.getElementById('hero');
       if (heroSection) {
         const heroRect = heroSection.getBoundingClientRect();
-        // Só sai da seção hero quando ela sair completamente da tela (top negativo)
-        setIsInHeroSection(heroRect.top >= 0);
+        // Só sai da seção hero quando ela sair completamente da tela (bottom negativo)
+        setIsInHeroSection(heroRect.bottom > 0);
       }
     };
 
