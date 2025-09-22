@@ -1,0 +1,32 @@
+import React from 'react';
+
+function App() {
+  return (
+    <div className="App">
+      <header style={{ padding: '20px', background: '#1e40af', color: 'white' }}>
+        <h1>Rotary Club de Curitiba-Sítio Cercado</h1>
+        <p>Servindo a comunidade há mais de 15 anos</p>
+      </header>
+      
+      <main style={{ padding: '40px' }}>
+        <section>
+          <h2>Bem-vindos ao nosso site!</h2>
+          <p>Em breve teremos nosso site completo com todas as informações sobre nossos projetos e atividades.</p>
+        </section>
+        
+        <section style={{ marginTop: '40px' }}>
+          <h3>Entre em Contato</h3>
+          <p>E-mail: contato@rotarysitio.com.br</p>
+          <p>Telefone: (41) 3333-4444</p>
+          <p>Endereço: Rua das Flores, 123 - Sítio Cercado, Curitiba-PR</p>
+        </section>
+      </main>
+      
+      <footer style={{ padding: '20px', background: '#1e293b', color: 'white', textAlign: 'center' }}>
+        <p>&copy; 2024 Rotary Club de Curitiba-Sítio Cercado - Distrito 4730</p>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
