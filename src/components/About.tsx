@@ -150,7 +150,7 @@ const About: React.FC = () => {
                 className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-rotary-blue"
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-rotary-blue to-rotary-gold rounded-lg flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 rotary-gradient rounded-lg flex items-center justify-center mr-4">
                     <area.icon className="text-white" size={24} />
                   </div>
                   <h4 className="text-xl font-semibold text-rotary-dark">

@@ -30,7 +30,7 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-rotary-blue to-rotary-gold bg-clip-text text-transparent;
+    @apply rotary-gradient bg-clip-text text-transparent;
   }
   
   .card-hover {

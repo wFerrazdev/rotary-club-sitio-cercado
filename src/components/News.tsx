@@ -156,9 +156,9 @@ const News: React.FC = () => {
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ delay: 0.5 + index * 0.1, duration: 0.6 }}
                   whileHover={{ scale: 1.02 }}
-                  className="bg-gradient-to-br from-rotary-blue/5 to-rotary-gold/5 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-br from-blue-600/5 to-blue-900/5 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="h-48 bg-gradient-to-br from-rotary-blue to-rotary-gold flex items-center justify-center">
+                  <div className="h-48 rotary-gradient flex items-center justify-center">
                     <span className="text-white text-2xl font-bold">Foto</span>
                   </div>
                   <div className="p-6">

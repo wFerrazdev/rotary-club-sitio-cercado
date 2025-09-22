@@ -324,7 +324,7 @@ const Contact: React.FC = () => {
           transition={{ delay: 0.8, duration: 0.8 }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-rotary-blue to-rotary-gold rounded-2xl p-8 text-white">
+          <div className="rotary-gradient rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
               Participe das Nossas Reuniões
             </h3>

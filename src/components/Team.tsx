@@ -150,7 +150,7 @@ const Team: React.FC = () => {
               >
                 {/* Member Photo */}
                 <div className="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-rotary-blue to-rotary-gold rounded-full flex items-center justify-center">
+                  <div className="w-32 h-32 rotary-gradient rounded-full flex items-center justify-center">
                     <span className="text-white text-2xl font-bold">
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </span>
@@ -222,7 +222,7 @@ const Team: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 1, duration: 0.8 }}
-          className="text-center bg-gradient-to-r from-rotary-blue to-rotary-gold rounded-2xl p-8 text-white"
+          className="text-center rotary-gradient rounded-2xl p-8 text-white"
         >
           <h3 className="text-2xl font-bold mb-4">
             Quer Fazer Parte da Nossa Equipe?
@@ -261,7 +261,7 @@ const Team: React.FC = () => {
                 <div className="p-8">
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-4">
-                      <div className="w-20 h-20 bg-gradient-to-br from-rotary-blue to-rotary-gold rounded-full flex items-center justify-center">
+                      <div className="w-20 h-20 rotary-gradient rounded-full flex items-center justify-center">
                         <span className="text-white text-xl font-bold">
                           {selectedMember.name.split(' ').map(n => n[0]).join('')}
                         </span>

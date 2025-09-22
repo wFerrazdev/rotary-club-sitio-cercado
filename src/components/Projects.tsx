@@ -215,7 +215,7 @@ const Projects: React.FC = () => {
                 className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
               >
                 {/* Project Image */}
-                <div className="h-48 bg-gradient-to-br from-rotary-blue to-rotary-gold flex items-center justify-center relative">
+                <div className="h-48 rotary-gradient flex items-center justify-center relative">
                   <project.icon className="text-white" size={48} />
                   <div className="absolute top-4 right-4">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(project.status)}`}>
@@ -280,7 +280,7 @@ const Projects: React.FC = () => {
           transition={{ delay: 0.8, duration: 0.8 }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-rotary-blue to-rotary-gold rounded-2xl p-8 text-white">
+          <div className="rotary-gradient rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">
               Quer Apoiar Nossos Projetos?
             </h3>
