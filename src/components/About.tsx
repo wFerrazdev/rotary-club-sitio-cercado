@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Target, Users, Heart, Globe, Award, TreePine } from 'lucide-react';
-import SectionDecorations from './SectionDecorations';
+import SectionDecorations from './SectionDecorations.tsx';
 
 const About: React.FC = () => {
   const [ref, inView] = useInView({
