@@ -40,8 +40,12 @@ const Header: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center space-x-3"
           >
-            <div className="w-12 h-12 bg-gradient-to-br from-rotary-blue to-rotary-gold rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">R</span>
+            <div className="w-12 h-12 flex items-center justify-center">
+              <img 
+                src="/rotarylogoazul.png" 
+                alt="Rotary Club Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
               <h1 className="text-xl font-bold text-rotary-dark">
